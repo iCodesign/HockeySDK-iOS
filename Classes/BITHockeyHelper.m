@@ -86,8 +86,7 @@ NSString *bit_settingsDir(void) {
     NSFileManager *fileManager = [[NSFileManager alloc] init];
     
     // temporary directory for crashes grabbed from PLCrashReporter
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    settingsDir = [[paths objectAtIndex:0] stringByAppendingPathComponent:BITHOCKEY_IDENTIFIER];
+    settingsDir = [[BITHockeyManager sharedHockeyManager].baseDir stringByAppendingPathComponent:BITHOCKEY_IDENTIFIER];
     
     if (![fileManager fileExistsAtPath:settingsDir]) {
       NSDictionary *attributes = [NSDictionary dictionaryWithObject: [NSNumber numberWithUnsignedLong: 0755] forKey: NSFilePosixPermissions];

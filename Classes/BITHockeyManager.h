@@ -103,6 +103,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (BITHockeyManager *)sharedHockeyManager;
 
+/**
+ Returns a shared BITHockeyManager object
+ 
+ @return A singleton BITHockeyManager instance ready use
+ */
+@property (nonatomic, copy) NSString *baseDir;
+
 
 /**
  Initializes the manager with a particular app identifier
